@@ -1,6 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
+var copyBtn = document.querySelector("#copy");
 // Write password to the #password input
 
   // arrays of characters available
@@ -131,10 +131,24 @@ var generateBtn = document.querySelector("#generate");
     // generate final password text without separators and show it in the textbox
     var passwordText1= document.querySelector("#password");
 
-    var passwordText2 = passwordText.join("");
+    var finalPasswordtext = passwordText.join("");
 
-    passwordText1.value = passwordText2;
+    passwordText1.value = finalPasswordtext;
     // generate final password text without separators and show it in the textbox
   }
 
+  // copy text to clipboard
+  function copyPassword() {
+    var copyText = document.querySelector("#password");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999)
+    document.execCommand("copy");
+    alert("Your unique password is able to be pasted from the clipboard as necessary.");
+  }
+  // copy text to clipboard
+
+
+// button event listeners
 generateBtn.addEventListener("click", generatePassword);
+copyBtn.addEventListener("click", copyPassword);
+// button event listeners
