@@ -1,41 +1,15 @@
 # passsord_generator
 
-create an array for each option, uppercase letters, lowercase letters, special characters
+We were tasked with developing an app that would generate a unique, secure password based upon user specifications: length and inclusion or exclusion of lowercase, uppercase and special characters.
 
-conditional statements to alllow for when someone selects no
+## Creation 
 
-prompts and conditionals
+1. A HTML layout and specific CSS styling was provided. 
 
-Math.random
+2. Using Javascript, asked for user input of length and inclusion or exclusion of lowercase, uppercase and special characters.
 
-if/else statements
+3. Created event listener for button function that would initiate the generate password function. 
 
-## High Level PseudoCode
+## Addition
 
-after creation of HTML
-
-// link button click to excecuting function EVENT LISTENER 
-    //  EVENT LISTENER : generatePassword
-        HTML
-        <button onclick = "generatePassword">
-            generatePassword
-        </button>
-        
-        JS
-        function generatePassword() {
-        // everything that should happen to generate the password
-        // (i.e., show prompts to generate password)
-        
-        }
-        
-    
-// prompt to get all of the information
-
-    // number of characters between 8 and 128, which case and special characters
-
-// if / else statements to handle if the user wants to include or disclude certain features of the password
-
-// if user clicks cancel on how many characters, create a minimum character password
-    // or throw up an error that says they must enter a number between 8 and 128 
-
-// 
+- As a personal addition, I created an aditional button that would copy the user's unique password to their clipboard for easy paste functionatlity. 
