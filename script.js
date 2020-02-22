@@ -118,8 +118,9 @@ var generateBtn = document.querySelector("#generate");
 
       console.log(yesUpperSpecialPassword);
     }
-    // uppercse and special characters
+    // uppercase and special characters
 
+    // lowercase and special characters
     
    
     
