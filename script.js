@@ -2,18 +2,21 @@
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-// function writePassword() {
 
   // arrays of characters available
   var upperAlpha = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "Q", "X", "Y", "Z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "Q", "X", "Y", "Z" , "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "Q", "X", "Y", "Z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "Q", "X", "Y", "Z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "Q", "X", "Y", "Z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "Q", "X", "Y", "Z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "Q", "X", "Y", "Z"];
+  
   var lowerAlpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  
   var specialChar = ["/", "!", "-", "_", "@", "#", "$", "^", "&", "(", ")", "<", ">", ".", "/", "!", "-", "_", "@", "#", "$", "^", "&", "(", ")", "<", ">", ".", "/", "!", "-", "_", "@", "#", "$", "^", "&", "(", ")", "<", ">", ".", "/", "!", "-", "_", "@", "#", "$", "^", "&", "(", ")", "<", ">", ".", "/", "!", "-", "_", "@", "#", "$", "^", "&", "(", ")", "<", ">", ".", "/", "!", "-", "_", "@", "#", "$", "^", "&", "(", ")", "<", ">", ".", "/", "!", "-", "_", "@", "#", "$", "^", "&", "(", ")", "<", ">", ".", "/", "!", "-", "_", "@", "#", "$", "^", "&", "(", ")", "<", ">", ".", "/", "!", "-", "_", "@", "#", "$", "^", "&", "(", ")", "<", ">", ".", "/", "!", "-", "_", "@", "#", "$", "^", "&", "(", ")", "<", ">", ".", "/", "!", "-", "_", "@", "#", "$", "^", "&", "(", ")", "<", ">", ".", "/", "!", "-", "_", "@", "#", "$", "^", "&", "(", ")", "<", ">", ".", "/", "!", "-", "_", "@", "#", "$", "^", "&", "(", ")", "<", ">", "."];
   // arrays of characters available
 
   // Shuffle lowerAlpha array
   var charFromLowerAlpha = lowerAlpha.sort(() => Math.random() - 0.5 );
+
   // Shuffle upperAlpha array
-  var charFromUpperAlpha = upperAlpha.sort(() => 0.5 - Math.random());   
+  var charFromUpperAlpha = upperAlpha.sort(() => 0.5 - Math.random()); 
+
   // Shuffle specialChar array
   var charFromSpecialChar = specialChar.sort(() => Math.random() - 0.5 );
 
@@ -21,23 +24,27 @@ var generateBtn = document.querySelector("#generate");
 
     var charCount = prompt("Pick the character length from 8-128");
 
-    // confirms which characters to include
-    var yesLower = confirm("Do you want to include lowercase letters?");
-    var yesUpper = confirm("Do you want to include uppercase letters?");
-    var yesSpecial = confirm("Do you want to include special characters?");
-    // confirms which characters to include
     // error if incorrect number of characters is input
-    if (charCount < 8) {
-      alert("ERROR: Must input a number between 8 and 128 to generate password.");
-    }
-    if (charCount > 128) {
-      alert("ERROR: Must input a number between 8 and 128 to generate password.");
+    if (charCount < 8 || charCount > 128) {
+
+      alert("ERROR: Must input a number between 8 and 128 to generate password. Try Again.");
+
+      System.exit(0); 
     }
     // error if incorrect number of characters is input
 
+    // confirms which characters to include
+    var yesLower = confirm("Do you want to include lowercase letters?");
+
+    var yesUpper = confirm("Do you want to include uppercase letters?");
+
+    var yesSpecial = confirm("Do you want to include special characters?");
+    // confirms which characters to include
+    
     // alert if no character types are selected
     if (yesLower === false && yesUpper === false && yesSpecial === false) {
-      alert("ERROR: At least one character type must be selected.");
+      alert("ERROR: At least one character type must be selected. Try Again.");
+      System.exit(0);
     }
     //alert if no character types are selected
 
@@ -49,35 +56,36 @@ var generateBtn = document.querySelector("#generate");
       
       var charFromAllYesShuffled = charFromAllYesTogether.sort(() => 0.5 - Math.random());
   
-      var allYesPassword = [charFromAllYesShuffled.slice(0, charCount)];
-      console.log(allYesPassword);
+      var passwordText= charFromAllYesShuffled.slice(0, charCount);
+
+      console.log(passwordText);
     }
     // all characters included
 
     // only lowercase characters included
     else if (yesLower === true && yesUpper === false && yesSpecial === false) {
 
-      var yesLowerAllPassword = [charFromLowerAlpha.slice(0, charCount)];
+      var passwordText = charFromLowerAlpha.slice(0, charCount);
 
-      console.log(yesLowerAllPassword);      
+      console.log(passwordText);      
     }
     //only lowercase characters included
 
     // only uppercase characters included
     else if (yesLower === false && yesUpper === true && yesSpecial === false) {
 
-      var yesUpperAllPassword = [charFromUpperAlpha.slice(0, charCount)];
+      var passwordText = charFromUpperAlpha.slice(0, charCount);
 
-      console.log(yesUpperAllPassword);
+      console.log(passwordText);
     }
     // only uppercase characters included
 
     // only special characters included
     else if (yesLower === false && yesUpper === false && yesSpecial === true) {
 
-      var yesSpecialAllPassword = [charFromSpecialChar.slice(0, charCount)];
+      var passwordText = [charFromSpecialChar.slice(0, charCount)];
 
-      console.log(yesSpecialAllPassword);
+      console.log(passwordText);
     }
     // only special characters included
 
@@ -88,9 +96,9 @@ var generateBtn = document.querySelector("#generate");
 
       var yesLowerUpperShuffled = yesLowerUpper.sort(() => Math.random() - 0.5 );
 
-      var yesLowerUpperPassword = [yesLowerUpperShuffled.slice(0, charCount)];
+      var passwordText = yesLowerUpperShuffled.slice(0, charCount);
       
-      console.log(yesLowerUpperPassword);
+      console.log(passwordText);
     }
     // lowercase and uppercase characters
 
@@ -99,44 +107,34 @@ var generateBtn = document.querySelector("#generate");
 
       var yesLowerSpecial = [...charFromLowerAlpha, ...charFromSpecialChar];
 
-      var yesLowerSpecialShuffled = yesLowerSpecial.sort(() => Math.random() - 0.5 );
+      var yesLowerSpecialShuffled = yesLowerSpecial.sort(() => 0.5 - Math.random());
 
-      var yesLowerSpecialPassword = [yesLowerSpecialShuffled.slice(0, charCount)];
+      var passwordText = yesLowerSpecialShuffled.slice(0, charCount);
 
-      console.log(yesLowerSpecialPassword);
+      console.log(passwordText);
     }
     // lowercase and special characters
 
     // uppercase and special characters
-    else if (yeslower === false && yesUpper === true && yesSpecial === true) {
+    else if (yesLower === false && yesUpper === true && yesSpecial === true) {
 
       var yesUpperSpecial = [...charFromUpperAlpha, ...charFromSpecialChar];
 
       var yesUpperSpecialShuffled = yesUpperSpecial.sort(() => Math.random() - 0.5);
 
-      var yesUpperSpecialPassword = [yesUpperSpecialShuffled.slice(0, charCount)];
+      var passwordText = yesUpperSpecialShuffled.slice(0, charCount);
 
-      console.log(yesUpperSpecialPassword);
+      console.log(passwordText);
     }
     // uppercase and special characters
 
-    // lowercase and special characters
-    
-   
-    
-    
-    
- 
-    
-  
-    
+    // generate final password text without separators and show it in the textbox
+    var passwordText1= document.querySelector("#password");
+
+    var passwordText2 = passwordText.join("");
+
+    passwordText1.value = passwordText2;
+    // generate final password text without separators and show it in the textbox
   }
-  
-  // var passwordText = document.querySelector("#password");
 
-  // passwordText.value = password;
-
-// }
-
-// Add event listener to generate button
 generateBtn.addEventListener("click", generatePassword);
