@@ -42,7 +42,7 @@ var generateBtn = document.querySelector("#generate");
     //alert if no character types are selected
 
     
-    
+    // all characters included
     if (yesLower === true && yesUpper === true && yesSpecial === true) {
  
       var charFromAllYesTogether = [...charFromLowerAlpha, ...charFromUpperAlpha, ...charFromSpecialChar];
@@ -52,16 +52,76 @@ var generateBtn = document.querySelector("#generate");
       var allYesPassword = [charFromAllYesShuffled.slice(0, charCount)];
       console.log(allYesPassword);
     }
+    // all characters included
+
+    // only lowercase characters included
+    else if (yesLower === true && yesUpper === false && yesSpecial === false) {
+
+      var yesLowerAllPassword = [charFromLowerAlpha.slice(0, charCount)];
+
+      console.log(yesLowerAllPassword);      
+    }
+    //only lowercase characters included
+
+    // only uppercase characters included
+    else if (yesLower === false && yesUpper === true && yesSpecial === false) {
+
+      var yesUpperAllPassword = [charFromUpperAlpha.slice(0, charCount)];
+
+      console.log(yesUpperAllPassword);
+    }
+    // only uppercase characters included
+
+    // only special characters included
+    else if (yesLower === false && yesUpper === false && yesSpecial === true) {
+
+      var yesSpecialAllPassword = [charFromSpecialChar.slice(0, charCount)];
+
+      console.log(yesSpecialAllPassword);
+    }
+    // only special characters included
+
+    // lowercase and uppercase characters
     else if (yesLower === true && yesUpper === true && yesSpecial === false) {
+
       var yesLowerUpper = [...charFromLowerAlpha, ...charFromUpperAlpha];
+
       var yesLowerUpperShuffled = yesLowerUpper.sort(() => Math.random() - 0.5 );
+
       var yesLowerUpperPassword = [yesLowerUpperShuffled.slice(0, charCount)];
+      
       console.log(yesLowerUpperPassword);
     }
-    else if (yesLower === true && yesUpper === false && yesSpecial === true) {
-      var 
-    }
+    // lowercase and uppercase characters
 
+    // lowercase and special characters
+    else if (yesLower === true && yesUpper === false && yesSpecial === true) {
+
+      var yesLowerSpecial = [...charFromLowerAlpha, ...charFromSpecialChar];
+
+      var yesLowerSpecialShuffled = yesLowerSpecial.sort(() => Math.random() - 0.5 );
+
+      var yesLowerSpecialPassword = [yesLowerSpecialShuffled.slice(0, charCount)];
+
+      console.log(yesLowerSpecialPassword);
+    }
+    // lowercase and special characters
+
+    // uppercase and special characters
+    else if (yeslower === false && yesUpper === true && yesSpecial === true) {
+
+      var yesUpperSpecial = [...charFromUpperAlpha, ...charFromSpecialChar];
+
+      var yesUpperSpecialShuffled = yesUpperSpecial.sort(() => Math.random() - 0.5);
+
+      var yesUpperSpecialPassword = [yesUpperSpecialShuffled.slice(0, charCount)];
+
+      console.log(yesUpperSpecialPassword);
+    }
+    // uppercse and special characters
+
+    
+   
     
     
     
