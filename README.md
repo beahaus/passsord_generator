@@ -1,4 +1,4 @@
-# passsord_generator
+# password_generator
 
 We were tasked with developing an app that would generate a unique, secure password based upon user specifications: length and inclusion or exclusion of lowercase, uppercase and special characters.
 
